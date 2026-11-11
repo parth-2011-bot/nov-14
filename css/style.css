@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+:root{--red:#92272a;--red-dark:#5f171a;--red-light:#b94743;--cream:#f1e8d6;--paper:#fff9eb;--ink:#342c27;--metal:#b9b8b1;--gold:#c5a56a;--green:#829078}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:"DM Sans",sans-serif;color:var(--ink)}body{background:#e7dfd0;overflow-x:hidden}.scene{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 14px 12px;position:relative;background:radial-gradient(ellipse at 50% 20%,#fff8e9 0,#eee5d5 55%,#d9cfbd 100%)}.floor{position:absolute;inset:auto 0 0;height:18%;background:repeating-linear-gradient(90deg,rgba(130,105,77,.08) 0 2px,transparent 2px 80px),repeating-linear-gradient(0deg,rgba(130,105,77,.07) 0 2px,transparent 2px 80px);transform:perspective(300px) rotateX(35deg);transform-origin:bottom;pointer-events:none}.machine{position:relative;z-index:1;width:min(1040px,96vw);background:linear-gradient(110deg,#a83234 0,#842124 16%,#a12c2e 48%,#761b1e 100%);border:7px solid #5e1719;border-radius:23px 23px 15px 15px;padding:13px 15px 16px;box-shadow:inset 0 0 0 2px #c65b50,0 22px 40px #4a302c38,0 5px 0 #471315;max-height:calc(100svh - 76px);display:flex;flex-direction:column}.machine-header{height:65px;flex:none;display:flex;align-items:center;gap:13px;color:#f8ecd8;padding:0 8px 10px;border-bottom:2px solid #5d1719}.brand-mark{border:2px solid var(--gold);color:#f2d9a8;padding:8px 9px;font-family:"DM Mono",monospace;font-size:15px;font-weight:bold;letter-spacing:1px}.brand-copy{flex:1}.eyebrow,.machine-number,.window-topline,.window-bottomline,.panel-label,.mini-label,.screen-top,.countdown-heading,.countdown-note,.panel-footer,.footer-warning,.coin-slot,.chute-label,.key-entry,.tiny-credit,.reveal-kicker{font-family:"DM Mono",monospace;letter-spacing:1px}.eyebrow{font-size:8px;color:#e5cda8}.brand-copy h1{font-family:"Playfair Display",serif;font-size:clamp(16px,2.3vw,25px);line-height:1;margin:4px 0 0;letter-spacing:.7px}.machine-number{font-size:11px;color:#edcfa1}.machine-body{display:grid;grid-template-columns:minmax(0,1fr) 248px;gap:12px;padding:12px 0;min-height:0;flex:1}.display-window{background:#dfd4bd;border:7px solid #5b4a3e;border-radius:8px;box-shadow:inset 0 0 0 3px #f8f0df, inset 0 0 20px #7b61402b;display:flex;flex-direction:column;min-width:0;min-height:0;padding:8px 9px 7px}.window-topline,.window-bottomline{display:flex;justify-content:space-between;gap:8px;font-size:8px;color:#65584b;flex:none}.window-topline{padding:0 2px 7px}.window-bottomline{padding:7px 2px 0;border-top:1px solid #b6a78e}.shelves{display:grid;grid-template-rows:repeat(5,minmax(0,1fr));gap:5px;flex:1;min-height:0}.shelf{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;min-height:0;background:linear-gradient(#f7eedc,#e8ddc8);padding:5px 5px 8px;border-bottom:5px solid #a9a091;box-shadow:0 2px 2px #78634b35;position:relative}.product-slot{border:1px solid #c2b49e;background:linear-gradient(145deg,#fff9ed,#e9dfcc);border-radius:4px;min-width:0;min-height:0;padding:4px 3px 7px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;color:#42352c;position:relative;box-shadow:0 2px 2px #65523c22;transition:transform .15s,border-color .15s,box-shadow .15s}.product-slot:hover,.product-slot.selected{transform:translateY(-2px);border-color:#9c3934;box-shadow:0 0 0 2px #a93a3540,0 4px 7px #65523c2b}.product-slot:focus-visible,button:focus-visible{outline:3px solid #e7b85f;outline-offset:2px}.product-code{position:absolute;top:3px;left:4px;font:8px "DM Mono",monospace;color:#887968}.product-art{width:100%;height:clamp(22px,4.4vh,43px);display:flex;align-items:center;justify-content:center;font-size:clamp(17px,2.1vw,25px);color:#8c3430}.product-name{font-size:clamp(7px,.85vw,10px);font-weight:800;line-height:1.08;text-align:center;text-transform:uppercase;max-width:100%;overflow-wrap:anywhere}.product-kind{font:7px "DM Mono",monospace;color:#8b7a65;text-align:center}.product-slot.locked{opacity:.58}.product-slot.locked:after{content:"20 NOV";position:absolute;bottom:2px;right:3px;font:6px "DM Mono",monospace;color:#9c302b}.control-panel{background:linear-gradient(145deg,#eee3cd,#d6c8ae);border:4px solid #5c1719;border-radius:5px;padding:10px;display:flex;flex-direction:column;gap:8px;min-width:0;box-shadow:inset 0 0 0 1px #fff8e8}.panel-label{text-align:center;font-size:9px;color:#79664f;border-bottom:1px solid #c2b49d;padding-bottom:6px}.screen{background:#26352e;color:#b5d5a6;border:4px solid #817c6b;border-radius:4px;padding:8px;box-shadow:inset 0 0 12px #0d1813;min-height:67px;font-family:"DM Mono",monospace}.screen-top{font-size:8px;display:flex;justify-content:space-between;align-items:center;color:#a4c397}.led{width:6px;height:6px;border-radius:50%;background:#9bc783;box-shadow:0 0 7px #9bc783}.screen-code{font-size:16px;font-weight:bold;letter-spacing:1px;margin:5px 0}.screen-message{font-size:8px;line-height:1.3;color:#a9bca2}.selected-product{min-height:42px}.mini-label{font-size:7px;color:#8a7963}.selected-name{font-size:12px;font-weight:800;line-height:1.15;margin-top:3px}.selected-type{font-size:9px;color:#82715c;margin-top:2px}.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}.keypad button{height:25px;background:linear-gradient(#faf4e8,#d6c8b1);border:1px solid #a99a82;border-bottom-width:3px;border-radius:3px;color:#4b3d31;font:600 11px "DM Mono",monospace;cursor:pointer}.keypad button:active{transform:translateY(1px);border-bottom-width:1px}.keypad .key-small{font-size:8px}.key-entry{display:flex;justify-content:space-between;align-items:center;font-size:8px;color:#84735c}.key-entry strong{font-size:13px;color:#4c3c30}.dispense-button,.primary-action{background:linear-gradient(#c44c43,#8e2427);color:#fff6e8;border:2px solid #68191b;border-bottom-width:4px;border-radius:4px;padding:10px 8px;font-weight:800;letter-spacing:.7px;font-size:10px;cursor:pointer;box-shadow:0 2px 0 #54201b}.dispense-button span{float:right;font-size:15px}.dispense-button:disabled{filter:grayscale(.7);opacity:.5;cursor:not-allowed}.countdown-panel{background:#e5d8c1;border:1px solid #b9a78a;padding:7px 8px;margin-top:auto}.countdown-heading{display:flex;justify-content:space-between;font-size:7px;color:#77634b}.tiny-star{color:#b47e37}.countdown{font:700 14px "DM Mono",monospace;color:#7f2829;margin:5px 0 2px;white-space:nowrap}.countdown-note{font-size:7px;color:#8b7961}.panel-footer{display:flex;justify-content:space-between;font-size:6px;color:#897760}.machine-footer{height:25px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 7px;color:#f2d9b6}.footer-warning{font-size:8px}.coin-slot{font-size:7px;display:flex;align-items:center;gap:7px}.coin-slot i{display:block;width:35px;height:5px;border-radius:4px;background:#3e2521;box-shadow:inset 0 1px 2px #000}.dispense-chute{height:40px;width:46%;align-self:center;background:linear-gradient(#4b1718,#261718);border:4px solid #4f1719;border-top:2px solid #c2a06a;border-radius:0 0 8px 8px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;color:#d9c7a6;box-shadow:inset 0 5px 10px #0007}.chute-label{font-size:7px}.dispense-chute div:last-child{font:7px "DM Mono",monospace;color:#a89578}.shinchan{position:absolute;width:66px;height:auto;max-height:85px;object-fit:contain;right:-19px;bottom:22px;z-index:3;filter:drop-shadow(2px 3px 1px #351b1b66);pointer-events:none}.utility-bar{z-index:2;display:flex;gap:7px;margin-top:9px}.utility-button{border:1px solid #a89a83;background:#f7efdf;color:#665541;padding:7px 11px;border-radius:3px;font:9px "DM Mono",monospace;cursor:pointer}.utility-button span{background:#8f2929;color:#fff;padding:2px 5px;border-radius:10px;margin-left:4px}.tiny-credit{z-index:1;margin-top:6px;font-size:7px;color:#94836c}.overlay{position:fixed;inset:0;background:#201a18b8;z-index:20;display:none;align-items:center;justify-content:center;padding:16px;overflow:auto}.overlay.open{display:flex}.reveal-sheet{position:relative;width:min(620px,100%);max-height:min(88svh,850px);overflow:auto;background:#f7efdf;border:7px solid #842326;outline:2px solid #d0b77e;padding:25px 25px 20px;box-shadow:0 20px 70px #0007}.close-button{position:absolute;right:10px;top:7px;background:none;border:0;font-size:27px;color:#7e2928;cursor:pointer}.reveal-kicker{font-size:9px;color:#967b55;margin-bottom:8px}.reveal-sheet h2{font:800 clamp(22px,4vw,34px) "Playfair Display",serif;color:#792326;margin:0 30px 15px 0}.reveal-content{font-size:14px;line-height:1.6}.reveal-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.secondary-action{background:#e4d7c0;border:1px solid #b8a68b;color:#5d4a37;padding:10px 12px;font:700 9px "DM Mono",monospace;cursor:pointer}.muted{color:#82735f;font-size:12px}.collection-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:15px 0}.collection-item{border:1px solid #c8b99e;background:#fff9ed;text-align:left;padding:10px;cursor:pointer;color:#493b2d}.collection-item strong{display:block;font-size:11px}.collection-item span{font:8px "DM Mono",monospace;color:#8d7a61}.help-sheet ol{padding-left:20px;line-height:1.7;font-size:13px}.cassette{background:linear-gradient(135deg,#d5c5a4,#f4ead4);border:4px solid #5e4b3d;border-radius:12px;padding:15px;max-width:410px;margin:10px auto;box-shadow:inset 0 0 0 2px #fff9e9}.cassette-label{background:#9e3935;color:#fff0d6;padding:10px;text-align:center;font:700 13px "DM Mono",monospace}.cassette-window{height:50px;background:#443b33;margin:12px 15px;border-radius:25px;display:flex;align-items:center;justify-content:space-evenly;color:#e6d2aa}.cassette-reels{width:25px;height:25px;border:5px dotted #d9c39b;border-radius:50%}.track-list{list-style:none;padding:0;margin:12px 0}.track-list li{border-bottom:1px solid #d8cbb5;padding:5px 0;font-size:12px}.audio-controls{display:flex;gap:8px;flex-wrap:wrap}.audio-controls button,.sound-button,.choice-button,.download-link{border:1px solid #9d8a6e;background:#fff9ed;color:#493a2c;padding:9px 11px;cursor:pointer;font:700 10px "DM Mono",monospace;text-decoration:none;display:inline-block}.artwork{display:block;max-width:min(100%,420px);max-height:48vh;object-fit:contain;margin:10px auto;border:5px solid #fff9ed;box-shadow:0 3px 15px #493a2c25}.proof-box{border:1px dashed #9b8060;background:#efe5d2;padding:14px;margin:12px 0;font-family:"DM Mono",monospace;font-size:12px}.sim-question{font-weight:800;font-size:16px;margin-bottom:12px}.sim-options{display:grid;gap:8px}.sim-result{background:#e9dfcd;border-left:4px solid #a23a36;padding:12px;margin-top:12px}.sticker-preview{max-width:240px;max-height:240px;object-fit:contain;display:block;margin:12px auto}.sound-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.sound-button{min-height:76px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px}.sound-button span{font-size:20px}.zine-pages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.zine-page{min-height:130px;background:#fff9ec;border:1px solid #d3c3a7;padding:12px;display:flex;flex-direction:column;justify-content:space-between}.zine-page b{font:800 13px "Playfair Display",serif}.zine-page small{font:8px "DM Mono",monospace;color:#8d7b62}.certificate-img{max-width:100%;max-height:45vh;object-fit:contain}.birthday-lock{background:#e9dfcd;padding:12px;border:1px dashed #9b8060}.hidden{display:none!important}
+@media(max-width:700px){.scene{padding:5px 4px 4px;justify-content:center;min-height:100svh}.machine{width:96vw;max-height:calc(100svh - 47px);padding:7px;border-width:4px;border-radius:15px}.machine-header{height:43px;gap:7px;padding:0 4px 6px}.brand-mark{font-size:10px;padding:5px}.eyebrow{font-size:6px}.brand-copy h1{font-size:clamp(13px,4vw,19px)}.machine-number{font-size:8px}.machine-body{grid-template-columns:minmax(0,1fr) 112px;gap:5px;padding:6px 0}.display-window{border-width:4px;padding:4px}.window-topline,.window-bottomline{font-size:5px}.window-topline{padding-bottom:4px}.window-bottomline{padding-top:4px}.shelves{gap:3px}.shelf{gap:3px;padding:3px 3px 5px;border-bottom-width:3px}.product-slot{padding:2px 1px 4px;gap:2px}.product-code{font-size:6px;top:2px;left:2px}.product-art{height:clamp(15px,3.4vh,27px);font-size:17px}.product-name{font-size:clamp(5px,1.55vw,8px)}.product-kind{font-size:5px}.control-panel{padding:5px;gap:5px;border-width:2px}.panel-label{font-size:6px;padding-bottom:4px}.screen{padding:5px;min-height:53px;border-width:3px}.screen-top{font-size:5px}.screen-code{font-size:11px;margin:4px 0}.screen-message{font-size:6px}.selected-product{min-height:34px}.mini-label{font-size:5px}.selected-name{font-size:9px}.selected-type{font-size:7px}.keypad{gap:2px}.keypad button{height:20px;font-size:9px}.keypad .key-small{font-size:6px}.key-entry{font-size:6px}.key-entry strong{font-size:10px}.dispense-button{font-size:7px;padding:7px 4px}.dispense-button span{font-size:10px}.countdown-panel{padding:5px}.countdown-heading{font-size:5px}.countdown{font-size:9px}.countdown-note{font-size:5px}.panel-footer{font-size:5px}.machine-footer{height:17px;padding:0 3px}.footer-warning{font-size:5px}.coin-slot{font-size:5px;gap:3px}.coin-slot i{width:20px;height:4px}.dispense-chute{height:27px;width:58%;padding:0 7px;border-width:3px}.chute-label{font-size:5px}.dispense-chute div:last-child{font-size:5px}.shinchan{width:43px;right:-9px;bottom:16px}.utility-bar{margin-top:4px;gap:4px}.utility-button{padding:5px 7px;font-size:7px}.tiny-credit{font-size:5px;margin-top:3px}}
+@media(max-width:380px){.machine-body{grid-template-columns:minmax(0,1fr) 101px}.product-name{font-size:5px}.product-art{height:15px}.countdown{font-size:8px}.brand-copy h1{font-size:12px}.utility-button{font-size:6px;padding:5px}}
+@media(max-height:690px) and (min-width:701px){.machine{max-height:calc(100svh - 45px)}.machine-header{height:48px}.machine-body{padding:6px 0}.control-panel{gap:5px;padding:7px}.product-art{height:22px}.dispense-chute{height:30px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+/* NIGHT SHIFT */
+body.dark-mode {
+  background: #171516;
+}
+
+body.dark-mode .scene {
+  background: radial-gradient(
+    ellipse at 50% 20%,
+    #342729 0,
+    #21191b 55%,
+    #120f10 100%
+  );
+}
+
+body.dark-mode .floor {
+  opacity: 0.18;
+}
+
+body.dark-mode .display-window {
+  background: #55463d;
+  border-color: #302724;
+  box-shadow: inset 0 0 20px #0008;
+}
+
+body.dark-mode .shelf {
+  background: linear-gradient(#65544a, #493b34);
+  border-bottom-color: #302722;
+}
+
+body.dark-mode .product-slot {
+  background: linear-gradient(#75665a, #51443b);
+  border-color: #93816c;
+  color: #fff0d9;
+}
+
+body.dark-mode .product-code,
+body.dark-mode .product-kind {
+  color: #d1bda1;
+}
+
+body.dark-mode .window-topline,
+body.dark-mode .window-bottomline {
+  color: #e0cdb2;
+}
+
+body.dark-mode .control-panel {
+  background: linear-gradient(145deg, #55443b, #392d29);
+  border-color: #261819;
+}
+
+body.dark-mode .panel-label,
+body.dark-mode .mini-label,
+body.dark-mode .selected-type,
+body.dark-mode .key-entry,
+body.dark-mode .panel-footer {
+  color: #ddc5a4;
+}
+
+body.dark-mode .selected-name {
+  color: #fff0d9;
+}
+
+body.dark-mode .screen {
+  background: #101e18;
+  box-shadow: 0 0 12px #8cbb7655, inset 0 0 12px #000;
+}
+
+body.dark-mode .keypad button {
+  background: linear-gradient(#847365, #59483c);
+  color: #fff0d9;
+  border-color: #a18b70;
+}
+
+body.dark-mode .key-entry strong {
+  color: #fff0d9;
+}
+
+body.dark-mode .countdown-panel {
+  background: #57463a;
+  border-color: #8c7457;
+}
+
+body.dark-mode .countdown-heading,
+body.dark-mode .countdown-note {
+  color: #e7d0aa;
+}
+
+body.dark-mode .countdown {
+  color: #ffaaa0;
+}
+
+body.dark-mode .utility-button {
+  background: #35292a;
+  border-color: #79615b;
+  color: #f5e5ce;
+}
+
+body.dark-mode .tiny-credit {
+  color: #b5a18a;
+}
+
+/* Product reveal panels */
+body.dark-mode .reveal-sheet {
+  background: #302725;
+  border-color: #8d3030;
+  color: #f4e6d1;
+}
+
+body.dark-mode .reveal-sheet h2 {
+  color: #f0b2a4;
+}
+
+body.dark-mode .reveal-kicker,
+body.dark-mode .muted {
+  color: #c5ae91;
+}
+
+body.dark-mode .proof-box,
+body.dark-mode .sim-result,
+body.dark-mode .zine-page,
+body.dark-mode .birthday-lock,
+body.dark-mode .collection-item {
+  background: #453632;
+  border-color: #806657;
+  color: #f4e6d1;
+}
+
+body.dark-mode .secondary-action,
+body.dark-mode .choice-button,
+body.dark-mode .audio-controls button,
+body.dark-mode .sound-button,
+body.dark-mode .download-link {
+  background: #59443c;
+  color: #fff0d9;
+  border-color: #967963;
+}
+

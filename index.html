@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#8f2023">
+  <title>The Bromine Vending Machine</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="scene">
+    <div class="floor" aria-hidden="true"></div>
+    <section class="machine" aria-label="The Bromine Vending Machine">
+      <header class="machine-header">
+        <div class="brand-mark">B.V.M.</div>
+        <div class="brand-copy">
+          <div class="eyebrow">INDEPENDENTLY UNREGULATED SINCE NEVER</div>
+          <h1>THE VENDING MACHINE</h1>
+        </div>
+        <div class="machine-number">№ 014</div>
+      </header>
+
+      <div class="machine-body">
+        <section class="display-window" aria-label="Product shelves">
+          <div class="window-topline"><span>AVAILABLE SPECIMENS</span><span>SELECT · PAY · RECEIVE</span></div>
+          <div id="shelves" class="shelves"></div>
+          <div class="window-bottomline"><span>PLEASE DO NOT SHAKE THE MACHINE</span><span>20 ITEMS</span></div>
+        </section>
+
+        <aside class="control-panel">
+          <div class="panel-label">CONTROL DEPARTMENT</div>
+          <div class="screen">
+            <div class="screen-top"><span id="screenStatus">MACHINE READY</span><span class="led"></span></div>
+            <div id="screenCode" class="screen-code">SELECT ITEM</div>
+            <div id="screenMessage" class="screen-message">Your purchase awaits.</div>
+          </div>
+
+          <div class="selected-product">
+            <div class="mini-label">CURRENT SELECTION</div>
+            <div id="selectedName" class="selected-name">Nothing selected</div>
+            <div id="selectedType" class="selected-type">Choose a shelf item</div>
+          </div>
+
+          <div class="keypad" aria-label="Product code keypad">
+            <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button>
+            <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button>
+            <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button>
+            <button data-key="clear" class="key-small">CLR</button><button data-key="0">0</button><button data-key="enter" class="key-small">OK</button>
+          </div>
+          <div class="key-entry"><span>ITEM CODE</span><strong id="typedCode">— —</strong></div>
+          <button id="dispenseButton" class="dispense-button" disabled>DISPENSE ITEM <span>↘</span></button>
+          <div class="countdown-panel">
+            <div class="countdown-heading"><span>PALAK'S BIRTHDAY IN</span><span class="tiny-star">✦</span></div>
+            <div id="countdown" class="countdown">--d --h --m --s</div>
+            <div id="countdownNote" class="countdown-note">NOVEMBER 20 · 12:00 AM IST</div>
+          </div>
+          <div class="panel-footer"><span>NO REFUNDS</span><span>NONE</span></div>
+        </aside>
+      </div>
+
+      <footer class="machine-footer">
+        <div class="footer-warning"> CONTENTS MAY BE POISONOUS</div>
+        <div class="coin-slot"><span>INSERT IMAGINARY COIN</span><i></i></div>
+      </footer>
+      <div class="dispense-chute"><div class="chute-label">COLLECT HERE</div><div id="chuteMessage">YOUR ITEM WILL APPEAR HERE</div></div>
+      <img class="shinchan" src="assets/images/shinchan.png" alt="" onerror="this.hidden=true">
+    </section>
+
+    <nav class="utility-bar" aria-label="Machine utilities">
+      <button id="themeButton" class="utility-button">
+       NIGHT SHIFT
+        </button>
+      <button id="collectionButton" class="utility-button">▤ COLLECTION <span id="collectionCount">0</span></button>
+      <button id="helpButton" class="utility-button">? HOW TO USE</button>
+      <button id="secretButton" class="utility-button" aria-label="">✦</button>
+    </nav>
+    <div class="tiny-credit">A RETAIL OPERATION</div>
+  </main>
+
+  <div id="productOverlay" class="overlay" aria-hidden="true">
+    <article class="reveal-sheet">
+      <button class="close-button" data-close="productOverlay" aria-label="Close">×</button>
+      <div class="reveal-kicker" id="revealKicker">ITEM 01 · DISPENSED</div>
+      <h2 id="revealTitle">A product</h2>
+      <div id="revealContent" class="reveal-content"></div>
+      <div class="reveal-actions">
+        <button id="collectButton" class="primary-action">ADD TO COLLECTION</button>
+        <button class="secondary-action" data-close="productOverlay">BACK TO MACHINE</button>
+      </div>
+    </article>
+  </div>
+
+  <div id="collectionOverlay" class="overlay" aria-hidden="true">
+    <article class="reveal-sheet collection-sheet">
+      <button class="close-button" data-close="collectionOverlay" aria-label="Close">×</button>
+      <div class="reveal-kicker">PERSONAL INVENTORY</div>
+      <h2>Your collection</h2>
+      <p class="muted">Items you've collected stay here on this device. Select one to open it again.</p>
+      <div id="collectionList" class="collection-list"></div>
+      <button class="secondary-action" data-close="collectionOverlay">BACK TO MACHINE</button>
+    </article>
+  </div>
+
+  <div id="helpOverlay" class="overlay" aria-hidden="true">
+    <article class="reveal-sheet help-sheet">
+      <button class="close-button" data-close="helpOverlay" aria-label="Close">×</button>
+      <div class="reveal-kicker">OPERATING INSTRUCTIONS</div>
+      <h2>How to operate this thing</h2>
+      <ol>
+        <li>Select a product on the shelves, or enter its two-digit code(ie 01,02 etc).</li>
+        <li>Press <b>DISPENSE ITEM</b>. The machine will perform its very important procedure.</li>
+        <li>Open the dispensed item. Some products play audio, some are interactive, and some can be downloaded.</li>
+        <li>Add items to your collection to reopen them later on this device.</li>
+      </ol>
+      <p class="muted">Audio only plays after you press a control.</p>
+      <button class="secondary-action" data-close="helpOverlay">GOT IT</button>
+    </article>
+  </div>
+
+  <div id="secretOverlay" class="overlay" aria-hidden="true">
+    <article class="reveal-sheet">
+      <button class="close-button" data-close="secretOverlay" aria-label="Close">×</button>
+      <div class="reveal-kicker">UNAUTHORISED MACHINE NOTE</div>
+      <h2>psst.</h2>
+      <p>PHYSICS IS SOOO COOL.</p>
+      <p class="muted">The management has been informed. Management is the problem.</p>
+      <button class="secondary-action" data-close="secretOverlay">UNDERSTOOD</button>
+    </article>
+  </div>
+
+  <script src="content.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/machine.js"></script>
+</body>
+</html>
